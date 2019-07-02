@@ -1,0 +1,14 @@
+
+<button class="btn btn-primary" (click)="updateCont('down')"><b> Diminuir </b></button>
+<button class="btn btn-primary" (click)="updateCont('up')"><b> Aumentar </b></button>
+    
+<br><br>
+<p [ngStyle]="{ color: contador > 5 || contador < 0 ? 'red' : 'blue' }"><b>{{ contador }}</b></p>
+<br>
+<div [ngClass]="{ maiorQueCincoStyle: contador > 5 || contador < 0 }">
+    
+  <p *ngIf="contador < 0">Numero menor que 0</p>
+  <p *ngIf="contador == 5">Numero igual a 5</p>
+  <p *ngIf="contador > 5">Numero maior que 5</p>
+  <p *ngIf="contador < 5 && contador > 0">Numero menor que 5</p>
+</div>
