@@ -1,0 +1,42 @@
+<p>Adicionar nova Linguagem</p>
+
+<form #form="ngForm">
+  <br>
+  LInguagem:
+  <input type="text"
+    name="name"
+    [(ngModel)]="language.name"
+    #linguagem="ngModel"
+    required>
+  <div *ngIf="linguagem.errors && linguagem.touched">
+    <div *ngIf="linguagem?.errors.required">
+      Linguagem é obrigatória
+    </div>
+  </div><br>
+  Criador:
+  <input type="text"
+  name="creator"
+  [(ngModel)]="language.creator"
+  #criador="ngModel"
+  required>
+  <div *ngIf="criador.errors && criador.touched">
+    <div *ngIf="criador?.errors.required">
+      Criador é obrigatório
+    </div>
+  </div><br>
+  Ano de Criação da Linguagem:
+  <input type="number"
+  name="year"
+  [(ngModel)]="language.year"
+  #ano="ngModel"
+  required>
+  <div *ngIf="ano.errors && ano.touched">
+    <div *ngIf="ano?.errors.required">
+      Ano é obrigatório
+    </div>
+  </div><br>
+  <button [disabled]="form.invalid" (click)="enviar()">
+    Enviar
+  </button>
+</form>
+<br>

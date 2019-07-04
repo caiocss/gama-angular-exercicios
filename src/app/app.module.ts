@@ -7,10 +7,14 @@ import { ListaLanguagesComponent } from './lista-languages/lista-languages.compo
 import { RouterModule, Routes } from '@angular/router';
 import { LanguageItemComponent } from './language-item/language-item.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddLanguageComponent } from './add-language/add-language.component';
+import { FormsModule } from '@angular/forms';
+import { TrocaValorAnoPipe } from './troca-valor-ano.pipe';
 
 const routes: Routes = [
   {path: 'counter', component: ContadorComponent},
-  {path: 'languages', component: ListaLanguagesComponent}
+  {path: 'languages', component: ListaLanguagesComponent},
+  {path: 'addlanguage', component: AddLanguageComponent}
 ]
 
 @NgModule({
@@ -18,12 +22,15 @@ const routes: Routes = [
     AppComponent,
     ContadorComponent,
     ListaLanguagesComponent,
-    LanguageItemComponent
+    LanguageItemComponent,
+    AddLanguageComponent,
+    TrocaValorAnoPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
