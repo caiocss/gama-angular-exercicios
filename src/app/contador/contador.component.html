@@ -1,4 +1,12 @@
 
+<br><br>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>  
+</div>
+<br>
+<div style="text-align:center">
 <button class="btn btn-primary" (click)="updateCont('down')"><b> Diminuir </b></button>
 <button class="btn btn-primary" (click)="updateCont('up')"><b> Aumentar </b></button>
     
@@ -11,4 +19,5 @@
   <p *ngIf="contador == 5">Numero igual a 5</p>
   <p *ngIf="contador > 5">Numero maior que 5</p>
   <p *ngIf="contador < 5 && contador > 0">Numero menor que 5</p>
+</div>
 </div>
